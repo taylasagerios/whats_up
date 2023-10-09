@@ -4,7 +4,7 @@ var submitBtn = document.querySelector("#submit-btn");
 
 function getWeather () {
     console.log("CITY VALUE: ", cityValue.value)
-    var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityValue.value + "&appid=" + apiKey;
+    var queryUrl = "https://api.openweathermap.org/data/2.5/forecast?" + cityValue.value + "&appid=" + apiKey;
     fetch(queryUrl)
     .then(function(response) {
         console.log("Response: ", response);
