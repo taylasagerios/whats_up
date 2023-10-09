@@ -14,5 +14,6 @@ function getWeather () {
         console.log("DATA: ", data)
     })
 }
+var
 
 submitBtn.addEventListener("click", getWeather);
