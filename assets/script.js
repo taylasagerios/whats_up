@@ -14,6 +14,13 @@ function getWeather () {
         console.log("DATA: ", data)
     })
 }
-var
+//var info = [(variables)
+//var date = [#date]
+//var temp = [#temp]
+//var icon = [#icon]
+//varwind = [#wind]
+//var humidity = [#humidity]  
+//] 
 
-submitBtn.addEventListener("click", getWeather);
+
+submitBtn.addEventListener("click", getWeather);  
