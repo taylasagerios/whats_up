@@ -16,6 +16,14 @@ function getWeather() {
             fillForecastHtml(forecast)
         })
 }
+// function getweathercities() {
+//     // Save related form data as an object
+//     var info = {
+//         cityName: cityValue.value,
+//     };
+//     // Use .setItem() to s
+//     localStorage.setItem("cityName", JSON.stringify(cityName));
+// }
 
 
 function filterForecast(allWeatherForecasts) {
@@ -29,6 +37,8 @@ function filterForecast(allWeatherForecasts) {
     // }
     var fivedayforecast = document.querySelector("#five-day-forecast")
     var forecast = []
+
+
     for (var i = 0; i < allWeatherForecasts.length; i += 8) {
         var data = allWeatherForecasts[i]
         var forecastData = {
@@ -38,21 +48,23 @@ function filterForecast(allWeatherForecasts) {
             wind: data.wind.speed,
             humidity: data.main.humidity
         }
+       
+
         var card = document.createElement("div")
-        card.setAttribute("class", "col-2 card card-rounded border-color-black bg-grey" )
-        var temp= document.createElement("p")
-        var wind= document.createElement("p")
-        var humidity= document.createElement("p")
-        var date= document.createElement("p")
-        var img= document.createElement("img")
+        card.setAttribute("class", "col-2 card card-rounded border-color-black bg-grey")
+        var temp = document.createElement("p")
+        var wind = document.createElement("p")
+        var humidity = document.createElement("p")
+        var date = document.createElement("p")
+        var img = document.createElement("img")
         img.setAttribute("src", `https://openweathermap.org/img/wn/${forecastData.icon}@2x.png`)
-        temp.textContent= "Temp:" + forecastData.temp
-        wind.textContent= forecastData.wind
-        humidity.textContent= forecastData.humidity
-        date.textContent= forecastData.date
+        temp.textContent = "Temp:" + forecastData.temp
+        wind.textContent = forecastData.wind
+        humidity.textContent = forecastData.humidity
+        date.textContent = forecastData.date
         card.append(date, temp, wind, humidity, img)
         fivedayforecast.append(card)
-        
+
     }
     // console.log(date+'',temp+'',wind+'',+humidity);
     console.log("forecast:", forecast)
@@ -68,4 +80,14 @@ function fillForecastHtml(forecast) {
 }
 
 
-submitBtn.addEventListener("click", getWeather);  
+submitBtn.addEventListener("click", getWeather);
+
+function getweathercities() {
+    // Save related form data as an object
+    var info = {
+        cityName: cityValue.value,
+    };
+    // Use .setItem() to s
+    localStorage.setItem("cityName", JSON.stringify(cityName));
+}
+
