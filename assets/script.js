@@ -47,7 +47,8 @@ function filterForecast(allWeatherForecasts) {
         forecast.push({
             date: data.dt,
             temp: data.main.temp,
-            wind: data.wind,
+            icon: data.icon,
+            wind: data.wind.speed,
             humidity: data.main.humidity
         })
     }
