@@ -1,11 +1,12 @@
-.col-3{
- background-color: darkgrey;   
+.col-3 {
+    background-color: darkgrey;
+    text-align: center;
 }
 
-.col-9{
+.col-9 {
     background-color: whitesmoke;
 }
 
-.col{
+.col {
     background-color: gainsboro;
 }
