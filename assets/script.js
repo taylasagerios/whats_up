@@ -12,7 +12,8 @@ function getWeather () {
     })
     .then(function(data) {
         console.log("DATA: ", data)
-        filterForecast(data.list)
+        var forecast = filterForecast(data.list)
+        fillForecastHtml(forecast)
     })
 }
 // for(x = 0; x >= 0; x++){
@@ -33,15 +34,34 @@ function getWeather () {
 
 function filterForecast(allWeatherForecasts) {
     console.log(allWeatherForecasts)
-    console.log()
-    var arr = {
-        date: data.date,
-        temp: data.temp,
-        wind: data.wind,
-        humidity: data.humidity
+    // var data = allWeatherForecasts[0]
+    // var arr = {
+    //     date: data.dt,
+    //     temp: data.main.temp,
+    //     wind: data.wind,
+    //     humidity: data.main.humidity
+    // }
+   var forecast = []
+    for (var i =0;i< allWeatherForecasts.length; i+=8) {
+        var data = allWeatherForecasts[i]
+        forecast.push({
+            date: data.dt,
+            temp: data.main.temp,
+            wind: data.wind,
+            humidity: data.main.humidity
+        })
     }
-    console.log(date+'',temp+'',wind+'',+humidity);
+    // console.log(date+'',temp+'',wind+'',+humidity);
+    console.log("forecast:",forecast)
+return forecast
+}
 
+function fillForecastHtml(forecast) {
+    for(var x=0; x< forecast.length; x++){
+        var tempEl = document.querySelector(`#temp-${x}`)
+        console.log(tempEl)
+
+    }
 }
 
 
