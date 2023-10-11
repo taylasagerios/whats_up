@@ -48,7 +48,7 @@ function filterForecast(allWeatherForecasts) {
             wind: data.wind.speed,
             humidity: data.main.humidity
         }
-       
+
 
         var card = document.createElement("div")
         card.setAttribute("class", "col-2 card card-rounded border-color-black bg-grey")
@@ -59,8 +59,8 @@ function filterForecast(allWeatherForecasts) {
         var img = document.createElement("img")
         img.setAttribute("src", `https://openweathermap.org/img/wn/${forecastData.icon}@2x.png`)
         temp.textContent = "Temp:" + forecastData.temp
-        wind.textContent = forecastData.wind
-        humidity.textContent = forecastData.humidity
+        wind.textContent = "Wind:" + forecastData.wind
+        humidity.textContent = "Humidity"+ forecastData.humidity +"%"
         date.textContent = forecastData.date
         card.append(date, temp, wind, humidity, img)
         fivedayforecast.append(card)
